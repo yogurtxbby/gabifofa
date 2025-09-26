@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Link • Acesse Aqui</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabi — Redirecionando…</title>
   <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -25,185 +21,136 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1304803068010246&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+  <style>
+    :root{
+      --bg:#0f1115;
+      --card:#141820;
+      --text:#e6e9ef;
+      --muted:#a7b0c0;
+      --accent:#229ED9; /* vibe Telegram */
+      --ring:#2a3240;
+      --radius:18px;
+    }
 
-<style>
-  :root{
-    --bg-page:#bdbdbd;             /* cinza do fundo externo */
-    --bg-card: #f4efe9;             /* bege clarinho do cartão */
-    --text:#222;
-    --muted:#6b7280;
-    --shadow: 0 18px 40px rgba(0,0,0,.25);
-    --radius: 22px;
-    --btn-shadow: 0 6px 18px rgba(0,0,0,.08);
-    --btn-border: 1px solid rgba(0,0,0,.06);
-    --pill-bg:#fff;
-    --pill-bg-hover:#fafafa;
-    --wa:#25D366;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    background: var(--bg-page);
-    display:grid; place-items:center;
-    padding:24px;
-  }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 900px at 50% -20%, #1a2030 0%, var(--bg) 55%) fixed;
+      color:var(--text);
+      font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      display:grid;
+      place-items:center;
+    }
 
-  /* “telefone”/cartão principal */
-  .phone{
-    width:min(420px, 92vw);
-    height:min(780px, 92vh);
-    border-radius: 28px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    position: relative;
-    background:
-      radial-gradient(1200px 600px at 10% -20%, rgba(255,255,255,.55), transparent 60%),
-      radial-gradient(900px 700px at 120% 0%, rgba(255,214,150,.35), transparent 60%),
-      radial-gradient(800px 600px at 50% 120%, rgba(197,196,180,.35), transparent 60%),
-      var(--bg-card);
-  }
+    .card{
+      width:min(520px, 92vw);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02)) , var(--card);
+      border:1px solid #1f2632;
+      border-radius:var(--radius);
+      padding:28px 24px;
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.05);
+    }
 
-  /* área de conteúdo com padding interno */
-  .screen{
-    height:100%;
-    padding:22px 18px 18px;
-    display:flex; flex-direction:column; align-items:center;
-    gap:16px;
-  }
+    .row{display:flex; gap:18px; align-items:center}
+    .avatar{
+      width:64px; height:64px; border-radius:50%;
+      object-fit:cover; flex:0 0 64px;
+      border:2px solid #233048;
+      box-shadow:0 0 0 5px rgba(34,158,217,.08);
+    }
 
-  /* botões flutuantes topo */
-  .float{
-    position:absolute; top:14px;
-    width:40px; height:40px; border-radius:999px;
-    display:grid; place-items:center;
-    background: rgba(255,255,255,.7);
-    backdrop-filter: blur(6px);
-    border:1px solid rgba(0,0,0,.06);
-    cursor:pointer; user-select:none;
-    transition:transform .08s ease, background .2s ease;
-  }
-  .float:active{ transform: translateY(1px); }
-  .float.left{ left:14px; }
-  .float.right{ right:14px; }
+    h1{
+      margin:0 0 2px 0; font-weight:700; letter-spacing:.2px;
+      font-size:20px;
+    }
+    .sub{
+      margin:0; color:var(--muted);
+      font-size:14px;
+    }
 
-  /* avatar */
-  .avatar{
-    width:84px; height:84px; border-radius:50%;
-    object-fit:cover;
-    border:3px solid rgba(255,255,255,.85);
-    box-shadow: 0 6px 16px rgba(0,0,0,.12);
-    margin-top:34px;
-  }
+    .bar{
+      position:relative; height:10px; margin-top:18px;
+      background:#0e1219; border:1px solid #1f2632;
+      border-radius:999px; overflow:hidden;
+    }
+    .bar::before{
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.1) 0 0) no-repeat,
+        linear-gradient(90deg, var(--accent), #66c8f0);
+      width:0%;
+      animation: load 2.6s ease-in-out forwards;
+    }
+    @keyframes load{
+      0%{width:0%}
+      60%{width:78%}
+      100%{width:100%}
+    }
 
-  h1{
-    margin:6px 0 4px;
-    font-size:1.1rem; letter-spacing:.6px;
-    font-weight:800; text-align:center; color:#000;
-  }
+    .dots::after{
+      content:""; display:inline-block; width:1ch; text-align:left;
+      animation:dots 1.2s steps(4,end) infinite;
+    }
+    @keyframes dots{ 0%{content:""} 25%{content:"."} 50%{content:".."} 75%{content:"..."} 100%{content:""} }
 
-  /* botão principal estilo Linktree */
-  .link-card{
-    width:100%;
-    max-width: 360px;
-    background: var(--pill-bg);
-    border: var(--btn-border);
-    box-shadow: var(--btn-shadow);
-    border-radius: 12px;
-    padding: 14px 16px;
-    text-decoration:none;
-    color:var(--text);
-    display:flex; align-items:center; gap:12px;
-    transition: background .2s ease, transform .08s ease, box-shadow .2s ease;
-  }
-  .link-card:hover{ background: var(--pill-bg-hover); }
-  .link-card:active{ transform: translateY(1px); }
+    .foot{
+      margin-top:14px; display:flex; justify-content:space-between; align-items:center;
+      color:var(--muted); font-size:12px;
+    }
+    .pill{
+      padding:.25rem .6rem; border-radius:999px;
+      background:rgba(34,158,217,.12); color:#bfe9ff; border:1px solid rgba(34,158,217,.3);
+      text-decoration:none;
+    }
 
-  .icon{
-    width:22px; height:22px; display:grid; place-items:center; flex:0 0 auto;
-  }
-  .icon.wa{ color: var(--wa); }
-
-  .label{
-    flex:1 1 auto; text-align:center; font-weight:600;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
-
-  /* botão redondo central (WhatsApp) */
-  .round{
-    margin-top:8px;
-    width:48px; height:48px; border-radius:999px;
-    background:#fff; border: var(--btn-border);
-    display:grid; place-items:center;
-    box-shadow: var(--btn-shadow);
-    transition: transform .08s ease, background .2s ease;
-    text-decoration:none;
-  }
-  .round:hover{ background:#f9f9f9; }
-  .round:active{ transform: translateY(1px); }
-
-  /* rodapé Linktree-style */
-  .join{
-    margin-top:auto;
-    background:#fff;
-    border: var(--btn-border);
-    border-radius:999px;
-    padding:10px 14px;
-    font-size:.9rem; color:#111; text-decoration:none;
-    box-shadow: var(--btn-shadow);
-  }
-  .legal{
-    margin-top:10px; color:#777; font-size:.8rem; text-align:center;
-  }
-  .legal a{ color:inherit; text-decoration:none }
-  .legal a:hover{ text-decoration:underline }
-
-  /* utilitário escondido em telas muito baixas */
-  @media (max-height: 700px){
-    .phone{ height:auto }
-  }
-</style>
+    @media (prefers-reduced-motion: reduce){
+      .bar::before{animation:none; width:100%}
+      .dots::after{animation:none; content:"..."}
+    }
+  </style>
 </head>
 <body>
+  <main class="card" role="alert" aria-live="polite">
+    <div class="row">
+      <!-- Troque o src abaixo pela foto que você quiser -->
+      <img class="avatar" src="https://i.imgur.com/614dmCh.jpeg" alt="Gabi" />
+      <div>
+        <h1>Gabi</h1>
+        <p class="sub">Redirecionando pra você falar comigo <span class="dots" aria-hidden="true"></span></p>
+      </div>
+    </div>
 
-  <main class="phone">
-    <div class="screen">
-  
+    <div class="bar" aria-label="Carregando"></div>
 
-      <!-- avatar -->
-      <img class="avatar" src="https://i.imgur.com/vdr5VUN.jpeg" alt="Avatar">
-
-      <!-- título -->
-      <h1>Gabi ❤️</h1>
-
-      <!-- BOTÃO PRINCIPAL -->
-      <a class="link-card" href="https://wa.me/556182187731?text=Oi%2C%20estou%20interessado%20%F0%9F%91%80" target="_blank" rel="noopener">
-        <span class="icon wa" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M3.8 20.2 5.2 17A8 8 0 1 1 17 18.8l-2.8 1.4a8.8 8.8 0 1 0-10.4 0Z"
-                  stroke="currentColor" stroke-width="1.6"/>
-            <path d="M8.9 9.9c0 2.1 3 4.5 4.7 4.5.7 0 1.2-.5 1.6-1l.3-.4c.1-.2 0-.5-.2-.6l-1.4-.7c-.2-.1-.4 0-.5.2l-.2.3c-.2.3-.6.3-.9.2-.8-.4-1.8-1.4-2.2-2.2-.1-.3 0-.7.2-.9l.3-.2c.2-.1.3-.4.2-.6l-.7-1.4c-.1-.2-.4-.3-.6-.2l-.4.3c-.5.4-1 .9-1 1.6Z"
-                  fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="label">Fale Comigo no WhatsApp 🟢</span>
-        <!-- menu pontinhos (decorativo) -->
-        <span aria-hidden="true" style="opacity:.5">⋯</span>
-      </a>
+    <div class="foot">
+      <span>Estilo Telegram</span>
+      <!-- Botão de fallback caso o auto-redirect falhe -->
+      <a id="fallback" class="pill" href="https://t.me/GabizinhaBraga" rel="noopener">Abrir no Telegram</a>
     </div>
   </main>
 
-<script>
-  function share(){
-    const data = {
-      title: 'Acesse Aqui',
-      text: 'Meus links úteis',
-      url: location.href
-    };
-    if (navigator.share) navigator.share(data).catch(()=>{});
-    else navigator.clipboard?.writeText(location.href).then(()=>alert('Link copiado!'));
-  }
-</script>
+
+
+  <script>
+    // ==== CONFIGURE AQUI O DESTINO ====
+    const DESTINO = "https://t.me/GabizinhaBraga"; // troque se quiser
+    const TEMPO_MS = 2700; // tempo antes do redirecionamento
+
+    // redireciona após a barra terminar de carregar
+    setTimeout(() => {
+      try{
+        window.location.href = DESTINO;
+      }catch(e){
+        // se algo der errado, o botão fallback já está visível
+      }
+    }, TEMPO_MS);
+
+    // se abrir em standalone iOS/Android, ainda funciona
+    document.getElementById('fallback').setAttribute('href', DESTINO);
+  </script>
+
 </body>
 </html>
